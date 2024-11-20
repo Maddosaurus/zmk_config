@@ -25,7 +25,7 @@
         mouse_scroll: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&mwh>, <&mwh>;
             tap-ms = <20>;
         }
     };
