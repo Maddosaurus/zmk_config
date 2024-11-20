@@ -20,6 +20,14 @@
             bindings = <&mkp MB4>, <&mkp MB5>;
             tap-ms = <20>;
         };
+
+        // See https://github.com/zmkfirmware/zmk/issues/72
+        mouse_scroll: mouse_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <2>;
+            bindings = <&mwh>, <&mwh>;
+            tap-ms = <20>;
+        }
     };
 
     keymap {
@@ -41,8 +49,8 @@
             >;
 
             sensor-bindings =
-                <&mkp_encoder>,         // Left  encoder
-                <&inc_dec_kp UP DOWN>;  // Right encoder
+                <&mkp_encoder>,   // Left  encoder
+                <&mouse_scroll>;  // Right encoder
         };
 
         lower_layer {
